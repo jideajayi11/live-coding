@@ -1,11 +1,18 @@
-import logo from './img/welcome.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <img src={logo} class="img-fluid"/>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/login" render={(props) => <Login {...props} />} />
+        <Route path="/register" render={(props) => <Register {...props} />} />
+        <Route path="/" render={(props) => <Home {...props} />} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
