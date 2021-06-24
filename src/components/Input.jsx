@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Input = ({
   label,
@@ -10,13 +10,22 @@ const Input = ({
   inputClass = 'form-control',
   checked = ''
 }) => {
+  const [ value, setValue ] = useState('');
+
   return (
     <div className={`form-group ${divClass}`}>
       {
         type !== 'checkbox' &&
           <label className={labelClass} htmlFor={labelFor}>{label}</label>
       }
-      <input type={type} className={inputClass} placeholder={placeholder} checked={checked} />
+      <input
+        type={type}
+        className={inputClass}
+        placeholder={placeholder}
+        checked={checked}
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
       {
         type === 'checkbox' &&
           <label className={labelClass} htmlFor={labelFor}>{label}</label>

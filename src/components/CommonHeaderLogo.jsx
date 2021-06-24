@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import logo from '../img/logo.svg';
 import engr from '../img/engr.png';
 import dot from '../img/dot.svg';
@@ -17,7 +18,9 @@ const CommonHeaderLogo = ({
         <div className="main-body">
               <div className="card-body">
                 <div>
-                  <img src={logo} className="img-fluid" alt="" srcSet="" />
+                  <Link to="/">
+                    <img src={logo} className="img-fluid" alt="" srcSet="" />
+                  </Link>
                 </div>
                 <div className="div-body">
                   {
